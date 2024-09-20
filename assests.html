@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: 'Times New Roman';
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #b2dfee;
+            color: black;
+        }
+
+        header {
+            background-color: #CD5C5C;
+            color: black;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2px solid;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            
+            
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+        }
+
+       
+
+        section {
+            padding: 20px;
+            border-bottom: 2px solid;
+            text-align: center;
+            
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        #about-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+
+        }
+
+        #about img {
+            border-radius: 60%;
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        #about {
+            max-width: 70%;
+        }
+
+        #skills {
+            display: flex;
+            justify-content: space-around;
+            
+            margin-top: 20px;
+            padding: 30px;
+           
+        }
+
+        .skill-container {
+            text-align: center;
+            width: 100px;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: conic-gradient(green 0deg, green var(--percentage), lightgray var(--percentage));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px auto;
+            position: relative;
+        }
+
+        .circle::before {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: #FFE4B5;
+            border-radius: 50%;
+        }
+
+        .percentage {
+            font-size: 18px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-name {
+            margin-top: 10px;
+        }
+
+        
+        .project-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            
+        }
+
+        .project-container {
+            flex: 1;
+            border: 2px solid #CD5C5C;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #FFF8DC;
+            text-align: left;
+            max-width: 45%;
+            box-sizing: border-box;
+        }
+
+        footer {
+            background-color: #FFF8DC;
+            color: #333;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+            border-top: 3px solid #D2B48C;
+            border-radius: 10px 10px 0 0;
+        }
+
+        #contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        #contact form {
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        #contact label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        #contact input[type="text"],
+        #contact input[type="email"],
+        #contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        #contact input[type="submit"] {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #contact input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        .contact-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .contact-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            #about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #about img {
+                margin: 0 auto 20px;
+            }
+
+            #skills {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project-container {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+–
+    <header>
+        <div>
+            <h1>Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about"><u>About</u></a></li>
+                    <li><a href="#skills"><u>Skills</u></a></li>
+                    <li><a href="#projects"><u>Projects</u></a></li>
+                    <li><a href="#education"><u>Education</u></a></li>
+                    <li><a href="#contact"><u>Contact</u></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="about-container">
+        <div id="about-photo">
+            <img src="mine.jpeg" alt="Avatar">
+        </div>
+        <div id="about">
+            <h2>About Me</h2>
+            <p>I am an IT student currently studying at Vignan’s University.</p>
+            <p><strong>Name:</strong> Triveni Chirumamilla</p>
+            <p><strong>Profession:</strong> Student</p>
+            <p><strong>Location:</strong> Nandigama, Andhra Pradesh, India</p>
+        </div>
+    </section>
+    
+    <style>
+        #about-container {
+            display: flex;
+            align-items: right;
+            padding: 20px;
+            text-align: left; /* Aligns text to the left */
+        }
+    
+        #about-photo img {
+            border-radius: 80%;
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            margin-left: 300px;
+        }
+    
+        #about {
+            max-width: 70%;
+        }
+
+        .education-table {
+    width: 80%; /* Adjust width as needed */
+    margin: 0 auto; /* Center the table */
+    border-collapse: separate; /* Ensure cells have space */
+    border-spacing: 20px; /* Space between columns */
+}
+
+.education-table td {
+    vertical-align: top; /* Align text to the top of the cell */
+    padding: 10px; /* Add padding inside the cells */
+    text-align: center; /* Center align the content */
+}
+
+    </style>
+    
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skill-container">
+            <div class="circle" style="--percentage: 70deg;">
+                <span class="percentage">50%</span>
+            </div>
+            <div class="skill-name">HTML</div>
+        </div>
+        <div class="skill-container">
+            <div class="circle" style="--percentage: 70deg;">
+                <span class="percentage">50%</span>
+            </div>
+            <div class="skill-name">CSS</div>
+        </div>
+        <div class="skill-container">
+            <div class="circle" style="--percentage: 60deg;">
+                <span class="percentage">50%</span>
+            </div>
+            <div class="skill-name">Java</div>
+        </div>
+        <div class="skill-container">
+            <div class="circle" style="--percentage: 65deg;">
+                <span class="percentage">65%</span>
+            </div>
+            <div class="skill-name">Python</div>
+        </div>
+        <div class="skill-container">
+            <div class="circle" style="--percentage: 80deg;">
+                <span class="percentage">80%</span>
+            </div>
+            <div class="skill-name">C</div>
+        </div>
+        
+        
+
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2><u>Projects</u></h2>
+            
+            <!-- Project List Container -->
+            <div class="project-list">
+                <!-- Project 1 Container -->
+                <div class="project-container">
+                    <h3>Project-1: Product Recommendation System for E-Commerce</h3>
+                    <img src="pro1.png" alt="Project 1" width="300" height="300">
+                    <p>Developed a personalized product recommendation system using machine learning algorithms to enhance customer shopping experiences on e-commerce platforms.<br> 
+                        The system analyzes user behavior, purchase history, and product attributes to suggest relevant products, increasing average order value and customer satisfaction.<br>
+                        Built using Python, TensorFlow, and scikit-learn, with integration into a sample e-commerce website.</p>
+                </div>
+                
+                <!-- Project 2 Container -->
+                <div class="project-container">
+                    <h3>Project-2: Fashion Recommendation System</h3>
+                    <img src="pro2.png" alt="Project 2" width="300" height="300">
+                   <p> Developed a personalized product recommendation system using machine learning algorithms to enhance customer shopping experiences on e-commerce platforms.<br> 
+                        The system analyzes user behavior, purchase history, and product attributes to suggest relevant products, increasing average order value and customer satisfaction.<br>
+                        Built using Python, TensorFlow, and scikit-learn, with integration into a sample e-commerce website.</p>
+                </section>
+ <section id="education">
+        <h3><u>Education</u></h3>
+        <table class="education-table">
+            <tr>
+                <td>
+                    <h4>Bachelor of Technology</h4>
+                    <p>Vignan University, 2022-2026</p>
+                    <img src="vig.jpeg" alt="Project 2" width="300" height="300">
+                </td>
+                <td>
+                    <h4>Intermediate</h4>
+                    <p>Sri Akshara primeAC Campus, 2020-2022</p>
+                    <img src="inter.jpeg" alt="Project 2" width="300" height="300">
+                </td>
+            </tr>
+        </table>
+        
+    </section>
+    
+    <section id="contact">
+        <h2><u>Contact Me</u></h2>
+        <form action="submit-form.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <input type="submit" value="send message">
+        </section>
+        <footer>
+            <p>&copy; 2024 TRIVENI CHIRUMAMILLA | All Rights Reserved</p>
+        </footer>
+    
+
+            
+            </body>
+            </html>
